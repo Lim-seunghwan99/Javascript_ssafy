@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 동등 연산자를 활용한 조건문
+    if (0 == []) {
+      console.log('true?')
+    } else {
+      console.log('false?')
+    }
+    // 실행 결과 : 
+    // true?가 출력된다.
+
+    // 일치 연산자를 활용한 조건문
+    if ({} === false) {
+      console.log('true?')
+    } else {
+      console.log('false?')
+    }
+    // // 실행 결과 : false?가 출력된다. 
+    // 엄격한 비교이기 때문에 false만 true?가 출력
+
+    // // 논리 연산자를 활용한 단축 평가
+    console.log(0 && 13)
+    // 실행 결과 :
+    console.log(0 || 13)
+    // // 실행 결과 : 0, 13
+    // 0 && 13에서 0이 False이기 대문에 0 출력,
+    // 0 || 13에서 0이 false, 13에서 true이기 때문에 13출력
+
+    let num = 12
+    num /= 3
+    console.log(num)
+    // // 실행 결과 : 4 
+
+    const number = 13
+    number++
+    // // 실행 결과 : const로 number를 지정해서 값을 재할당 할 때
+    // TypeError 오류 발생한다.
+  </script>
+</body>
+</html>
