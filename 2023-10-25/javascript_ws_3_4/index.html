@@ -15,6 +15,7 @@
       ex)
       홍길동 (3) ['밥먹기', '공부하기', '숨쉬기']
     */
+      /*
       const person = {
         name: "홍길동",
         hobbies: ["밥먹기", "공부하기", "숨쉬기"],
@@ -23,7 +24,7 @@
         },
       };
       console.log(person.showHobbies());
-
+      */
       /*
       위에서 작성한 showHobbies를 아래의 요구 사항을 만족하도록 수정하시오.
         1. showHobbies 메서드 호출시, 아래와 같은 양식의 문구가 출력 되어야 한다.
@@ -36,14 +37,15 @@
         홍길동은 공부하기를 좋아한다.
         홍길동은 숨쉬기를 좋아한다.
     */
-      function showHobbies() {
-        console.log(`${this.name}의 취미 목록 :`);
-        person.hobbies.forEach((item) => {
-          console.log(`${this.name}은 ${item}를 좋아한다.`);
-        });
-      }
-      console.log(showHobbies.call(person));
-      /* 수현이 코드
+      // function showHobbies() {
+      //   console.log(`${this.name}의 취미 목록 :`);
+      //   person.hobbies.forEach((item) => {
+      //     console.log(`${this.name}은 ${item}를 좋아한다.`);
+      //   });
+      // }
+      // console.log(showHobbies.call(person));
+
+      /*수현이 코드*/
       const person = {
         name: "홍길동",
         hobbies: ["밥먹기", "공부하기", "숨쉬기"],
@@ -57,6 +59,7 @@
       };
       person.showHobbies();
 
+      /*
       const person = {
         name: "홍길동",
         hobbies: ["밥먹기", "공부하기", "숨쉬기"],
@@ -70,6 +73,39 @@
 
       person.showHobbies();
       */
+
+      /*지연 누나 코드*/
+      /*
+//    const person = {
+//     name: '홍길동',
+//     hobbies: ['밥먹기', '공부하기', '숨쉬기'],
+//     showHobbies: function () {
+//         return `${this.name} ${this.hobbies}`
+//     }
+//    }
+
+//    console.log(person.showHobbies())
+//    function showHobbies (p) {
+//     console.log(p.name, p.hobbies)
+//    }
+
+//    showHobbies(person)
+    
+    const person = {
+        name: '홍길동',
+        hobbies: ['밥먹기', '공부하기', '숨쉬기'],
+        showHobbies: function () {
+            console.log(`${this.name}의 취미 목록`)
+            this.hobbies.forEach((item) => {
+                console.log(`${this.name}은 ${item}를 좋아한다.`)
+            })
+        }
+    }
+
+    person.showHobbies()
+
+
+    */
     </script>
   </body>
 </html>
