@@ -40,13 +40,20 @@
           ...
         ]
       */
-      actors = [];
-      for (let i = 0; i < ages.length; i++) {
-        const age = ages[i];
-        const name = names[i];
-        const actor = { age, name };
-        actors.push(actor);
-      }
+      // actors = [];
+      // for (let i = 0; i < ages.length; i++) {
+      //   const age = ages[i];
+      //   const name = names[i];
+      //   const actor = { age, name };
+      //   actors.push(actor);
+      // }
+      // console.log(actors);
+      const actors = ages.map((age, index) => {
+        return {
+          age: age,
+          name: names[index],
+        };
+      });
       console.log(actors);
 
       /*
@@ -60,12 +67,14 @@
           ...
         ]
         */
-      adult_actors = [];
-      for (let i = 0; i < actors.length; i++) {
-        if (actors[i]["age"] >= 20) {
-          adult_actors.push(actors[i]);
-        }
-      }
+      // adult_actors = [];
+      // for (let i = 0; i < actors.length; i++) {
+      //   if (actors[i]["age"] >= 20) {
+      //     adult_actors.push(actors[i]);
+      //   }
+      // }
+      // console.log(adult_actors);
+      const adult_actors = actors.filter((actor) => actor.age >= 20);
       console.log(adult_actors);
     </script>
   </body>

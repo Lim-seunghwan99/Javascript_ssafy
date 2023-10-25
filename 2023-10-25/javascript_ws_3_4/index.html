@@ -43,6 +43,33 @@
         });
       }
       console.log(showHobbies.call(person));
+      /* 수현이 코드
+      const person = {
+        name: "홍길동",
+        hobbies: ["밥먹기", "공부하기", "숨쉬기"],
+        showHobbies: function () {
+          console.log(
+            `${this.name} (${this.hobbies.length}) ${JSON.stringify(
+              this.hobbies
+            )}`
+          );
+        },
+      };
+      person.showHobbies();
+
+      const person = {
+        name: "홍길동",
+        hobbies: ["밥먹기", "공부하기", "숨쉬기"],
+        showHobbies: function () {
+          console.log(`${this.name}의 취미 목록:`);
+          this.hobbies.forEach((hobby) => {
+            console.log(`${this.name}은 ${hobby}를 좋아한다.`);
+          });
+        },
+      };
+
+      person.showHobbies();
+      */
     </script>
   </body>
 </html>
