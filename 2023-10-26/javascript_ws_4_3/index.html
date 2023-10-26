@@ -49,43 +49,43 @@
       카드가 생성되면 기존 input과 textarea의 내용은 삭제되어야 합니다.
       (완성 이후 카드 예시는 삭제)
     */
-      const form = document.querySelector("#form");
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        // 사용자가 입력한 제목과 내용 가져오기
-        let titleval = document.querySelector("#title");
-        let contentval = document.querySelector("#content");
-        // 새로운 카드 생성
+      const titleTag = document.querySelector("#title");
+      const contentTag = document.querySelector("#content");
+      const cardsSection = document.querySelector("#cardSection");
+
+      function createCard(title, content) {
         const article = document.createElement("article");
         article.classList.add("col-4");
 
-        const carddiv = document.createElement("div");
-        carddiv.classList.add("card", "m-1");
+        const div1 = document.createElement("div");
+        div1.classList.add("card", "m-1");
 
-        const carddiv2 = document.createElement("div");
-        carddiv2.classList.add("card-body");
+        const div2 = document.createElement("div");
+        div2.classList.add("card-body");
 
-        const cardtitle = document.createElement("h5");
-        cardtitle.classList.add("card-title");
+        const h5 = document.createElement("h5");
+        h5.classList.add("card-title");
+        h5.textContent = title;
 
-        const cardtext = document.createElement("p");
-        cardtext.classList.add("card-text");
+        const p = document.createElement("p");
+        p.classList.add("card-text");
+        p.textContent = content;
 
-        cardtitle.textContent = titleval.value;
-        cardtext.textContent = contentval.value;
+        div2.appendChild(h5);
+        div2.appendChild(p);
+        div1.appendChild(div2);
+        article.appendChild(div1);
 
-        carddiv2.appendChild(cardtitle);
-        carddiv2.appendChild(cardtext);
-        carddiv.appendChild(carddiv2);
-        article.appendChild(carddiv);
-        // 카드 섹션에 추가
-        const cardsSection = document.querySelector("#cardsSection");
-        cardsSection.appendChild(article);
+        return article;
+      }
 
-        // 입력 필드 초기화
-        document.getElementById("title").value = "";
-        document.getElementById("content").value = "";
+      const formTag = document.querySelector("#form");
+      formTag.addEventListener("submit", function (event) {
+        const title = titleTag.value;
+        const content = contentTag.value;
       });
+      const newCard = createCard(title, content);
+      cardsSection.appendChild(newCard);
     </script>
   </body>
 </html>
